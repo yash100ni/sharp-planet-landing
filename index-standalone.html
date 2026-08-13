@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>KS CODE™ | Understand Your Child Better | Sharp Planet</title>
+<meta name="description" content="The FREE KS CODE™ Discovery Conversation helps parents of children aged 9–16 understand how their child naturally learns, thinks, remembers, and grows. 30–45 minutes. No pressure. No obligation.">
+
+<!-- Open Graph placeholders — replace with real values before launch -->
+<meta property="og:title" content="KS CODE™ | Understand Your Child Better | Sharp Planet">
+<meta property="og:description" content="Don't change your child. Discover their KS CODE™. A FREE Discovery Conversation for parents of children aged 9–16.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/og-image.webp">
+<meta property="og:url" content="">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   KS CODE™ — Sharp Planet Landing Page
+   Design system: warm ivory surfaces, deep teal ink,
+   antique-gold accent. Signature motif: the "learning
+   thread" — a single continuous line that finds its way
+   through dots, echoing the idea that every child's
+   learning path is unique but connected.
+   ========================================================= */
+
+/* ---------- Tokens ---------- */
+:root{
+  --color-bg: #FAF6EE;
+  --color-bg-alt: #F3ECDD;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #FDF9F1;
+
+  --color-primary: #1E3A38;       /* deep teal ink */
+  --color-primary-dark: #12241F;
+  --color-primary-tint: #E7EEEC;
+
+  --color-accent: #BE8A3E;        /* warm antique gold */
+  --color-accent-dark: #9C6F2C;
+  --color-accent-soft: #F1E1BE;
+
+  --color-rose: #B5695E;          /* muted rose — used sparingly for "old approach" */
+  --color-rose-soft: #F3E3DF;
+
+  --color-text: #232B29;
+  --color-muted: #5C6764;
+  --color-on-dark: #F4EFE3;
+  --color-on-dark-muted: #C7D2CD;
+
+  --color-border: #E4DAC4;
+  --color-border-strong: #D7CBAE;
+
+  --shadow-sm: 0 1px 2px rgba(30, 58, 56, 0.06);
+  --shadow-md: 0 8px 24px rgba(30, 58, 56, 0.08);
+  --shadow-lg: 0 24px 60px rgba(18, 36, 31, 0.14);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --container-w: 1160px;
+  --container-narrow-w: 820px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img{ max-width: 100%; display: block; }
+ul, ol{ margin: 0; padding: 0; list-style: none; }
+a{ color: inherit; text-decoration: none; }
+button{ font-family: inherit; }
+h1, h2, h3, h4, p, blockquote, figure{ margin: 0; }
+
+.skip-link{
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  padding: 12px 20px;
+  z-index: 999;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus{ left: 0; }
+
+:focus-visible{
+  outline: 2.5px solid var(--color-accent-dark);
+  outline-offset: 3px;
+}
+
+.container{
+  max-width: var(--container-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container-narrow{ max-width: var(--container-narrow-w); }
+
+/* ---------- Type scale ---------- */
+h1, .hero-title{
+  font-size: clamp(2.3rem, 4.2vw + 1rem, 3.75rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+h2{
+  font-size: clamp(1.7rem, 2.4vw + 1rem, 2.55rem);
+  font-weight: 800;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+}
+h3{
+  font-size: clamp(1.2rem, 1vw + 1rem, 1.5rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.3;
+}
+h4{
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.35;
+}
+p{ line-height: 1.65; color: var(--color-text); }
+
+.eyebrow{
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: 14px;
+}
+.eyebrow-center{ display: block; text-align: center; }
+
+.section-head{ max-width: 760px; margin: 0 auto 48px; text-align: center; }
+.section-head h2{ margin-bottom: 4px; }
+.section-sub{
+  margin-top: 16px;
+  font-size: 1.08rem;
+  color: var(--color-muted);
+}
+
+.section{ padding: 96px 0; position: relative; }
+.section + .section{ border-top: 1px solid var(--color-border); }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 30px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 1rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), border-color .25s var(--ease);
+  text-align: center;
+  line-height: 1.2;
+}
+.btn-primary{
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+.btn-primary:hover{
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.btn-large{ padding: 18px 36px; font-size: 1.05rem; }
+.btn-small{ padding: 11px 20px; font-size: 0.9rem; }
+.btn-ghost{
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-border-strong);
+}
+.btn-ghost:hover{
+  border-color: var(--color-primary);
+  background: var(--color-primary-tint);
+}
+.btn-outline{
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-outline:hover{
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+}
+
+.section-cta{ text-align: center; margin-top: 48px; }
+.section-cta-dual .cta-or{
+  margin: 22px 0 4px;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+}
+.section-cta-dual .cta-or-left{ text-align: left; }
+.cta-guide-title{ font-weight: 700; color: var(--color-primary); margin-top: 2px; }
+.cta-guide-sub{ max-width: 480px; margin: 6px auto 16px; color: var(--color-muted); font-size: 0.95rem; }
+
+/* ---------- Header ---------- */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 246, 238, 0.88);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 24px;
+}
+.brand{ display: flex; align-items: center; gap: 10px; }
+.brand-mark{ color: var(--color-accent-dark); display: flex; }
+.brand-text{ display: flex; flex-direction: column; line-height: 1.1; }
+.brand-title{ font-weight: 800; font-size: 1.02rem; color: var(--color-primary); }
+.brand-sub{ font-size: 0.72rem; letter-spacing: 0.08em; color: var(--color-accent-dark); font-weight: 700; }
+
+.main-nav{ display: flex; gap: 30px; }
+.main-nav a{
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  opacity: 0.78;
+  transition: opacity 0.2s var(--ease);
+  position: relative;
+}
+.main-nav a:hover{ opacity: 1; }
+
+.header-cta{ flex-shrink: 0; }
+
+.nav-toggle{
+  display: none;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.nav-toggle span{
+  width: 22px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: transform .25s var(--ease), opacity .25s var(--ease);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav{
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 24px 20px;
+  border-top: 1px solid var(--color-border);
+}
+.mobile-nav a{
+  padding: 12px 4px;
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-nav .btn{ margin-top: 14px; width: 100%; }
+.mobile-nav.open{ display: flex; }
+
+/* ---------- Hero ---------- */
+.hero{
+  position: relative;
+  padding: 64px 0 100px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 900px 500px at 85% -10%, var(--color-accent-soft) 0%, transparent 60%),
+    var(--color-bg);
+}
+.hero-code-thread{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.hero-code-thread svg{ width: 100%; height: 100%; }
+.thread-path{
+  fill: none;
+  stroke: var(--color-accent-dark);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.35;
+}
+.thread-dot{ fill: var(--color-accent-dark); opacity: 0.45; }
+
+.hero-inner{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: start;
+}
+.hero-title{ margin-bottom: 22px; }
+.accent-underline{
+  background-image: linear-gradient(transparent 68%, var(--color-accent-soft) 68%);
+}
+.hero-lede{ font-size: 1.15rem; color: var(--color-text); max-width: 560px; margin-bottom: 12px; }
+.hero-lede-strong{ font-weight: 700; color: var(--color-primary); }
+.hero-body{ font-size: 1.02rem; color: var(--color-muted); max-width: 560px; margin: 18px 0 22px; }
+
+.check-list{ display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+.check-list li{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+.check-icon{
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  margin-top: 1px;
+}
+.check-list-center{ align-items: center; }
+
+.offer-box{
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-sm);
+  max-width: 480px;
+}
+.offer-box-center{ margin: 0 auto 36px; text-align: center; max-width: 460px; border-left: none; border-top: 4px solid var(--color-accent); }
+.offer-tag{ font-weight: 800; color: var(--color-primary); font-size: 1.05rem; }
+.offer-meta{ color: var(--color-muted); font-size: 0.92rem; margin-top: 4px; }
+
+.hero-actions{ margin-bottom: 30px; }
+
+.hero-secondary{
+  padding: 22px 0 28px;
+  border-top: 1px dashed var(--color-border-strong);
+  max-width: 560px;
+}
+.hero-secondary-label{ font-weight: 700; color: var(--color-primary); margin-bottom: 6px; }
+.hero-secondary-copy{ color: var(--color-muted); font-size: 0.96rem; margin-bottom: 14px; }
+.micro-note{ font-size: 0.82rem; color: var(--color-muted); margin-top: 8px; }
+
+.trust-line{ padding-top: 22px; border-top: 1px solid var(--color-border); }
+.trust-line p{ font-weight: 700; color: var(--color-primary); }
+.trust-line-sub{ font-weight: 500 !important; color: var(--color-muted) !important; font-size: 0.92rem; margin-top: 2px; }
+
+.hero-visual{ position: relative; }
+.hero-portrait-frame{
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--color-primary-tint), var(--color-surface-warm));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.hero-visual-badge{
+  position: absolute;
+  bottom: -22px;
+  left: -22px;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 130px;
+}
+.badge-number{ font-size: 1.5rem; font-weight: 800; }
+.badge-label{ font-size: 0.78rem; color: var(--color-on-dark-muted); line-height: 1.25; margin-top: 2px; }
+
+/* Image placeholder system */
+.placeholder-img{ display: none; }
+[data-placeholder]{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  display: flex;
+}
+[data-placeholder]::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, var(--color-primary-tint) 0%, var(--color-surface-warm) 100%);
+}
+[data-placeholder]::after{
+  content: attr(data-placeholder);
+  position: relative;
+  margin: auto;
+  max-width: 70%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  font-weight: 600;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.7);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Pain points ---------- */
+.pain-points{ background: var(--color-surface); }
+.pain-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.pain-card{
+  background: var(--color-surface-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.pain-card:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+.pain-emoji{ font-size: 1.7rem; display: block; margin-bottom: 14px; }
+.pain-card p{ font-weight: 600; color: var(--color-primary); font-size: 1.02rem; }
+
+.highlight-box{
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-md);
+  padding: 24px 30px;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+.highlight-box p{ font-weight: 700; color: var(--color-primary); font-size: 1.05rem; }
+.highlight-box-alt{ background: var(--color-primary-tint); }
+.highlight-sub{ font-weight: 500 !important; color: var(--color-muted) !important; margin-top: 8px; font-size: 0.95rem; }
+
+.pain-copy{ max-width: 660px; margin: 0 auto; text-align: center; }
+.pain-copy p{ margin-bottom: 14px; color: var(--color-muted); }
+.pain-question{
+  font-weight: 800 !important;
+  color: var(--color-primary) !important;
+  font-size: 1.2rem !important;
+  margin-top: 24px !important;
+}
+
+/* ---------- Approach split ---------- */
+.approach-intro{ max-width: 700px; margin: 0 auto 48px; text-align: center; }
+.approach-intro p{ margin-bottom: 14px; color: var(--color-muted); }
+.approach-question{ font-weight: 800 !important; color: var(--color-primary) !important; font-size: 1.3rem !important; }
+
+.split-layout{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: stretch;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+.split-card{
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  border: 1px solid var(--color-border);
+}
+.split-card-old{ background: var(--color-rose-soft); }
+.split-card-new{ background: var(--color-primary-tint); }
+.split-label{ font-weight: 800; font-size: 1.05rem; margin-bottom: 20px; color: var(--color-primary); }
+.split-list{ display: flex; flex-direction: column; gap: 14px; }
+.split-list li{ display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.split-icon{
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+.split-list-old .split-icon{ background: #E4C7C1; color: var(--color-rose); }
+.split-list-new .split-icon{ background: var(--color-accent-soft); color: var(--color-accent-dark); }
+.split-divider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pull-quote{
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.45;
+  padding: 0 20px;
+  position: relative;
+}
+.pull-quote::before{
+  content: "";
+  display: block;
+  width: 46px;
+  height: 3px;
+  background: var(--color-accent);
+  margin: 0 auto 22px;
+  border-radius: 2px;
+}
+.pull-quote-left{ text-align: left; margin: 28px 0; padding: 0 0 0 22px; border-left: 3px solid var(--color-accent); font-size: 1.15rem; }
+.pull-quote-left::before{ display: none; }
+.pull-quote cite{ display: block; margin-top: 12px; font-size: 0.9rem; font-weight: 600; color: var(--color-muted); font-style: normal; }
+
+.approach-copy{ max-width: 640px; margin: 0 auto; text-align: center; }
+.approach-copy p{ margin-bottom: 14px; color: var(--color-muted); }
+.approach-lead{ font-weight: 700 !important; color: var(--color-primary) !important; font-size: 1.1rem !important; }
+
+/* ---------- KS CODE section ---------- */
+.ks-code{ background: var(--color-surface); }
+.ks-negation{ margin-top: 18px; font-size: 1.15rem; color: var(--color-muted); line-height: 1.5; }
+.ks-negation strong{ color: var(--color-primary); }
+
+.ks-copy{ max-width: 680px; margin: 0 auto 44px; text-align: center; }
+.ks-copy p{ margin-bottom: 14px; color: var(--color-muted); }
+.ks-shift{ font-weight: 700 !important; color: var(--color-primary) !important; font-size: 1.1rem !important; }
+
+.ks-subhead{ text-align: center; max-width: 720px; margin: 0 auto 36px; }
+
+.ks-detail-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+.ks-detail{ text-align: left; }
+.ks-detail-emoji{ font-size: 1.6rem; display: block; margin-bottom: 12px; }
+.ks-detail h4{ margin-bottom: 8px; }
+.ks-detail p{ color: var(--color-muted); font-size: 0.96rem; }
+
+.ks-transition{ text-align: center; max-width: 620px; margin: 0 auto 56px; font-weight: 600; color: var(--color-primary); font-size: 1.08rem; }
+
+.framework-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+.framework-card{
+  background: var(--color-surface-warm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.framework-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.framework-icon{
+  font-size: 1.9rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  margin-bottom: 20px;
+}
+.framework-card h3{ margin-bottom: 10px; }
+.framework-card p{ color: var(--color-muted); font-size: 0.98rem; }
+
+.journey-diagram{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 420px;
+  margin: 0 auto 44px;
+}
+.journey-step{
+  background: var(--color-primary-tint);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 12px 30px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  width: 100%;
+}
+.journey-step-final{ background: var(--color-primary); color: var(--color-on-dark); border-color: var(--color-primary); }
+.journey-arrow{ color: var(--color-accent-dark); font-size: 1.1rem; }
+
+.ks-closing{ text-align: center; max-width: 640px; margin: 0 auto; color: var(--color-muted); font-size: 1.05rem; font-weight: 500; }
+
+/* ---------- Discovery process ---------- */
+.discovery{ background: var(--color-bg-alt); }
+.not-list{ max-width: 640px; margin: 0 auto 44px; text-align: center; }
+.not-list p{ margin-bottom: 10px; font-size: 1.05rem; }
+
+.process-steps{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-bottom: 48px;
+  counter-reset: step;
+}
+.process-step{
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  position: relative;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.process-step:hover{ transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.process-number{
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-dark);
+  margin-bottom: 16px;
+}
+.process-icon{ font-size: 1.7rem; display: block; margin-bottom: 14px; }
+.process-step h4{ margin-bottom: 10px; }
+.process-step p{ color: var(--color-muted); font-size: 0.96rem; }
+
+.clarity-checklist{ text-align: center; max-width: 560px; margin: 0 auto 40px; }
+.clarity-lead{ font-weight: 700; color: var(--color-primary); margin-bottom: 18px; font-size: 1.08rem; }
+
+/* ---------- Testimonials ---------- */
+.testimonial-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 44px;
+}
+.testimonial-card{
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 34px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.testimonial-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-md); }
+.testimonial-emoji{ font-size: 1.6rem; display: block; margin-bottom: 16px; }
+.testimonial-title{ font-weight: 800; color: var(--color-primary); font-size: 1.08rem; margin-bottom: 12px; }
+.testimonial-card blockquote p:last-child{ color: var(--color-muted); font-size: 0.96rem; }
+.testimonial-card figcaption{ display: block; margin-top: 18px; font-weight: 700; font-size: 0.88rem; color: var(--color-accent-dark); }
+
+.testimonial-note{ max-width: 640px; margin: 0 auto 44px; text-align: center; }
+.testimonial-note p{ margin-bottom: 10px; color: var(--color-muted); }
+.testimonial-note p:first-child{ color: var(--color-primary); }
+
+.trust-strip{
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  text-align: center;
+  color: var(--color-on-dark);
+  margin-bottom: 44px;
+}
+.trust-stars{ color: var(--color-accent); font-size: 1.3rem; letter-spacing: 4px; margin-bottom: 18px; }
+.trust-strip-stats{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.trust-strip-stats div{ display: flex; flex-direction: column; align-items: center; }
+.trust-strip-stats span{ font-size: 1.7rem; font-weight: 800; color: var(--color-on-dark); margin-bottom: 4px; }
+.trust-strip-stats div{ font-size: 0.9rem; color: var(--color-on-dark-muted); }
+
+/* ---------- About / Dr. Kuldeep ---------- */
+.about{ background: var(--color-surface); }
+.about-intro{ max-width: 700px; margin: 0 auto 56px; text-align: center; }
+.about-intro p{ color: var(--color-muted); font-size: 1.05rem; }
+
+.about-grid{
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 60px;
+  align-items: start;
+}
+.about-media{ position: relative; }
+.about-photo-frame{
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+}
+.about-badge{
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-radius: 50%;
+  width: 84px; height: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+.about-badge .badge-number{ font-size: 1.4rem; }
+.about-badge .badge-label{ font-size: 0.68rem; color: var(--color-primary-dark); }
+.about-signature{
+  margin-top: 20px;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--color-primary);
+  opacity: 0.75;
+}
+
+.about-role{ color: var(--color-accent-dark); font-weight: 700; margin: 10px 0 20px; }
+.about-content h3{ margin-top: 6px; }
+.about-content > p{ color: var(--color-muted); margin-bottom: 18px; }
+.about-stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin-bottom: 18px;
+}
+.about-stats p{ font-weight: 700; color: var(--color-primary); }
+.about-mission{ font-weight: 600 !important; color: var(--color-primary) !important; }
+.about-cta{ margin-top: 30px; }
+.about-cta .btn{ margin-bottom: 4px; }
+
+/* ---------- FAQ ---------- */
+.faq-section{ background: var(--color-bg-alt); }
+.faq-accordion{ display: flex; flex-direction: column; gap: 14px; margin-bottom: 48px; }
+.faq-item{
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.faq-item h3{ font-size: 1rem; }
+.faq-question{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 22px 24px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--color-primary);
+}
+.faq-toggle-icon{
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--color-primary-tint);
+  position: relative;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+}
+.faq-toggle-icon::before, .faq-toggle-icon::after{
+  content: "";
+  position: absolute;
+  background: var(--color-primary);
+  border-radius: 2px;
+  top: 50%; left: 50%;
+}
+.faq-toggle-icon::before{ width: 11px; height: 1.6px; transform: translate(-50%, -50%); }
+.faq-toggle-icon::after{ width: 1.6px; height: 11px; transform: translate(-50%, -50%); transition: transform 0.3s var(--ease); }
+.faq-question[aria-expanded="true"] .faq-toggle-icon{ background: var(--color-accent); }
+.faq-question[aria-expanded="true"] .faq-toggle-icon::after{ transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+
+.faq-answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease), padding 0.35s var(--ease);
+  padding: 0 24px;
+}
+.faq-answer p{ color: var(--color-muted); padding-bottom: 22px; }
+.faq-item.open .faq-answer{ max-height: 300px; }
+
+.faq-footer{ text-align: center; }
+.faq-footer > p{ color: var(--color-muted); margin-bottom: 8px; }
+
+/* ---------- Final CTA ---------- */
+.final-cta{
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta .thread-path{ stroke: var(--color-accent); opacity: 0.25; }
+.final-cta .thread-dot{ fill: var(--color-accent); opacity: 0.4; }
+.final-cta h2, .final-cta h3, .final-cta h4{ color: var(--color-on-dark); }
+.final-cta .section-sub{ color: var(--color-on-dark-muted); }
+.final-cta-title{ margin-bottom: 4px; }
+.final-cta .ks-subhead{ color: var(--color-on-dark); }
+
+.choice-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  margin-bottom: 60px;
+  position: relative;
+}
+.choice-card{
+  border-radius: var(--radius-lg);
+  padding: 40px 34px;
+}
+.choice-card-primary{
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-lg);
+}
+.choice-card-primary h4{ color: var(--color-primary); margin: 8px 0 20px; }
+.choice-card-primary .check-list{ margin-bottom: 28px; }
+.choice-tag{ font-weight: 800; font-size: 1.05rem; color: var(--color-accent-dark); }
+.choice-card-secondary{
+  background: rgba(244, 239, 227, 0.06);
+  border: 1.5px solid rgba(244, 239, 227, 0.25);
+}
+.choice-card-secondary h4{ margin: 8px 0 14px; }
+.choice-card-secondary p{ color: var(--color-on-dark-muted); margin-bottom: 16px; }
+.choice-guide-title{ font-weight: 700; color: var(--color-on-dark) !important; font-size: 1.05rem; }
+.choice-card .btn{ margin-top: 8px; width: 100%; }
+
+.promise{ max-width: 620px; margin: 0 auto 60px; text-align: center; }
+.promise-label{ font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; color: var(--color-accent); margin-bottom: 16px; }
+.promise p{ color: var(--color-on-dark-muted); margin-bottom: 14px; }
+.promise-lead{ font-weight: 700 !important; color: var(--color-on-dark) !important; font-size: 1.25rem !important; line-height: 1.5; }
+
+.thank-you{ max-width: 560px; margin: 0 auto 56px; text-align: center; }
+.thank-you-title{ font-size: 1.6rem; font-weight: 800; color: var(--color-on-dark); margin-bottom: 18px; }
+.thank-you p{ color: var(--color-on-dark-muted); margin-bottom: 12px; }
+.thank-you-sign{ margin-top: 22px; font-weight: 700; color: var(--color-on-dark) !important; }
+.thank-you-sign span{ display: block; font-weight: 500; color: var(--color-on-dark-muted); font-size: 0.9rem; margin-top: 4px; }
+
+.trust-strip-final{ background: rgba(244, 239, 227, 0.08); border: 1px solid rgba(244, 239, 227, 0.18); }
+
+/* ---------- Footer ---------- */
+.site-footer{ background: var(--color-primary-dark); color: var(--color-on-dark-muted); padding: 44px 0; }
+.footer-inner{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-brand{ display: flex; flex-direction: column; }
+.footer-brand .brand-title{ color: var(--color-on-dark); }
+.footer-brand .brand-sub{ color: var(--color-accent); }
+.footer-nav{ display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-nav a{ font-size: 0.9rem; opacity: 0.85; }
+.footer-nav a:hover{ opacity: 1; }
+.footer-copy{ width: 100%; font-size: 0.82rem; opacity: 0.65; margin-top: 12px; text-align: center; }
+
+/* ---------- Reveal animations ---------- */
+.reveal, .reveal-stagger{
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible, .reveal-stagger.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.pain-grid.reveal.is-visible .reveal-stagger:nth-child(1){ transition-delay: 0.02s; }
+.pain-grid .reveal-stagger:nth-child(1){ transition-delay: 0s; }
+.pain-grid .reveal-stagger:nth-child(2){ transition-delay: 0.08s; }
+.pain-grid .reveal-stagger:nth-child(3){ transition-delay: 0.16s; }
+.pain-grid .reveal-stagger:nth-child(4){ transition-delay: 0.24s; }
+.pain-grid .reveal-stagger:nth-child(5){ transition-delay: 0.32s; }
+.pain-grid .reveal-stagger:nth-child(6){ transition-delay: 0.4s; }
+
+.ks-detail-grid .reveal-stagger:nth-child(1),
+.framework-cards .reveal-stagger:nth-child(1),
+.process-steps .reveal-stagger:nth-child(1),
+.testimonial-grid .reveal-stagger:nth-child(1),
+.choice-grid .reveal-stagger:nth-child(1){ transition-delay: 0s; }
+.ks-detail-grid .reveal-stagger:nth-child(2),
+.framework-cards .reveal-stagger:nth-child(2),
+.process-steps .reveal-stagger:nth-child(2),
+.testimonial-grid .reveal-stagger:nth-child(2),
+.choice-grid .reveal-stagger:nth-child(2){ transition-delay: 0.12s; }
+.ks-detail-grid .reveal-stagger:nth-child(3),
+.framework-cards .reveal-stagger:nth-child(3),
+.process-steps .reveal-stagger:nth-child(3),
+.testimonial-grid .reveal-stagger:nth-child(3){ transition-delay: 0.24s; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .reveal, .reveal-stagger{ opacity: 1; transform: none; transition: none; }
+  .btn, .pain-card, .framework-card, .process-step, .testimonial-card{ transition: none; }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* 1200px */
+@media (max-width: 1200px){
+  .container{ max-width: 980px; }
+  .hero-inner{ gap: 40px; }
+}
+
+/* 1024px — tablet landscape */
+@media (max-width: 1024px){
+  .section{ padding: 76px 0; }
+  .hero{ padding-top: 48px; }
+  .hero-inner{ grid-template-columns: 1fr; }
+  .hero-visual{ order: -1; max-width: 420px; margin: 0 auto 20px; }
+  .pain-grid{ grid-template-columns: repeat(2, 1fr); }
+  .ks-detail-grid, .framework-cards, .process-steps, .testimonial-grid{ grid-template-columns: repeat(2, 1fr); }
+  .about-grid{ grid-template-columns: 1fr; gap: 40px; }
+  .about-media{ max-width: 320px; margin: 0 auto; }
+  .choice-grid{ grid-template-columns: 1fr; }
+  .main-nav{ display: none; }
+}
+
+/* 768px — tablet portrait */
+@media (max-width: 768px){
+  .container{ padding: 0 20px; }
+  .section{ padding: 64px 0; }
+  .section-head{ margin-bottom: 36px; }
+  .header-cta{ display: none; }
+  .nav-toggle{ display: flex; }
+  .pain-grid{ grid-template-columns: 1fr; }
+  .ks-detail-grid, .framework-cards, .process-steps, .testimonial-grid{ grid-template-columns: 1fr; }
+  .split-layout{ grid-template-columns: 1fr; }
+  .split-divider{ padding: 4px 0; }
+  .journey-diagram{ max-width: 320px; }
+  .trust-strip-stats{ gap: 26px; }
+  .choice-card{ padding: 32px 26px; }
+}
+
+/* 480px */
+@media (max-width: 480px){
+  .container{ padding: 0 18px; }
+  .section{ padding: 56px 0; }
+  .hero{ padding: 36px 0 64px; }
+  .hero-visual-badge{ left: 0; bottom: -18px; padding: 12px 16px; min-width: 110px; }
+  .offer-box{ padding: 16px 18px; }
+  .pull-quote{ font-size: 1.12rem; padding: 0; }
+  .btn-large{ width: 100%; padding: 16px 24px; }
+  .split-card{ padding: 28px 22px; }
+  .framework-card, .process-step, .testimonial-card, .pain-card{ padding: 26px 22px; }
+  .trust-strip{ padding: 30px 20px; }
+  .trust-strip-stats{ gap: 20px; }
+  .trust-strip-stats span{ font-size: 1.4rem; }
+  .about-photo-frame{ aspect-ratio: 4/5; }
+  .faq-question{ padding: 18px 18px; font-size: 0.95rem; }
+  .header-inner{ padding-top: 12px; padding-bottom: 12px; }
+}
+
+/* 375 / 360 */
+@media (max-width: 375px){
+  h1, .hero-title{ font-size: 2rem; }
+  h2{ font-size: 1.55rem; }
+  .btn{ font-size: 0.95rem; padding: 14px 22px; }
+  .container{ padding: 0 16px; }
+}
+
+/* prevent any accidental horizontal overflow */
+html, body{ max-width: 100%; overflow-x: hidden; }
+
+/* =========================================================
+   PARENT GUIDE MODAL
+   ========================================================= */
+body.modal-open{ overflow: hidden; }
+
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(18, 36, 31, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+}
+.modal-overlay.open{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-panel{
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 44px 38px 34px;
+  text-align: center;
+  transform: translateY(18px) scale(0.98);
+  transition: transform 0.35s var(--ease);
+}
+.modal-overlay.open .modal-panel{
+  transform: translateY(0) scale(1);
+}
+
+.modal-close{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-warm);
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.modal-close:hover{ background: var(--color-primary-tint); transform: rotate(90deg); }
+
+.modal-title{ margin-bottom: 12px; }
+.modal-sub{ color: var(--color-muted); font-size: 0.95rem; margin-bottom: 26px; }
+
+.modal-form{ text-align: left; display: flex; flex-direction: column; gap: 16px; }
+.form-field{ display: flex; flex-direction: column; gap: 6px; }
+.form-field label{
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.form-field input{
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--color-text);
+  background: var(--color-surface-warm);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.form-field input:focus{
+  outline: none;
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+}
+.modal-form .f-row{ margin-top: 6px; }
+.modal-submit{ width: 100%; }
+.modal-privacy{ margin-top: 20px; font-size: 0.8rem; color: var(--color-muted); }
+
+@media (max-width: 480px){
+  .modal-panel{ padding: 36px 24px 28px; }
+}
+.brand-mark img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+}
+
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#hero" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+    <img src="assets/logo.png" alt="Sharp Planet Logo">
+</span>
+      <span class="brand-text">
+        <span class="brand-title">Sharp Planet</span>
+        <span class="brand-sub">KS CODE&trade;</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#ks-code">What is KS CODE™</a>
+      <a href="#discovery">The Conversation</a>
+      <a href="#testimonials">Families</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="header-cta">
+      <!-- TODO: replace #discovery with the real booking URL -->
+      <a href="#discovery" class="btn btn-primary btn-small">Book Free Conversation</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#ks-code">What is KS CODE™</a>
+    <a href="#discovery">The Conversation</a>
+    <a href="#testimonials">Families</a>
+    <a href="#faq">FAQ</a>
+    <a href="#discovery" class="btn btn-primary">Book Free Conversation</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-code-thread" aria-hidden="true">
+      <svg viewBox="0 0 1200 700" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="thread-path" d="M-50 560 C 150 460, 250 620, 420 500 S 700 340, 860 420 S 1150 250, 1300 300" />
+        <circle class="thread-dot" cx="420" cy="500" r="5"/>
+        <circle class="thread-dot" cx="860" cy="420" r="5"/>
+        <circle class="thread-dot" cx="150" cy="470" r="4"/>
+      </svg>
+    </div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">For Parents of Children Aged 9&ndash;16</p>
+        <h1 class="hero-title">Don&rsquo;t Change Your Child.<br><span class="accent-underline">Discover Their KS CODE&trade;.</span></h1>
+
+        <p class="hero-lede">Every child has a unique way of learning, thinking, remembering, and growing. If your child is struggling with focus, confidence, or studies, the answer may not be more pressure or another tuition.</p>
+        <p class="hero-lede hero-lede-strong">It may simply be understanding how your child naturally learns.</p>
+
+        <p class="hero-body">The FREE KS CODE&trade; Discovery Conversation helps you gain practical insights into your child&rsquo;s learning patterns, strengths, and the best ways to support them.</p>
+
+        <ul class="check-list">
+          <li><span class="check-icon" aria-hidden="true">✔</span> Understand how your child naturally learns</li>
+          <li><span class="check-icon" aria-hidden="true">✔</span> Discover possible reasons behind study struggles</li>
+          <li><span class="check-icon" aria-hidden="true">✔</span> Get practical guidance you can apply at home</li>
+        </ul>
+
+        <div class="offer-box">
+          <p class="offer-tag">🎁 FREE KS CODE&trade; Discovery Conversation</p>
+          <p class="offer-meta">30&ndash;45 Minutes &nbsp;&bull;&nbsp; Personalized &nbsp;&bull;&nbsp; No Pressure</p>
+        </div>
+
+        <div class="hero-actions">
+          <!-- TODO: replace href with real booking URL -->
+          <a href="#discovery" class="btn btn-primary btn-large">Discover My Child&rsquo;s KS CODE&trade;</a>
+        </div>
+
+        <div class="hero-secondary">
+          <p class="hero-secondary-label">Not Ready for a Conversation Yet?</p>
+          <p class="hero-secondary-copy">Start with our FREE Parent Guide &mdash; <strong>&ldquo;Har Bacche Ka Code Hota Hai.&rdquo;</strong> Discover the 7 hidden reasons why many intelligent children struggle in school&mdash;and what parents can do differently.</p>
+                    <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
+          <p class="micro-note">Instant Access &bull; Free Download</p>
+        </div>
+
+        <div class="trust-line">
+          <p>⭐ Trusted by <strong>3,00,000+</strong> Students, Parents &amp; Educators</p>
+          <p class="trust-line-sub">15+ Years of Experience &nbsp;&bull;&nbsp; 650+ Workshops &amp; Seminars</p>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="hero-portrait-frame">
+          <!-- Replace with assets/hero-family.webp -->
+          <img class="placeholder-img" src="assets/hero-family.png" alt="" data-placeholder="A parent and child in a warm, natural conversation">
+        </div>
+        <div class="hero-visual-badge">
+          <span class="badge-number">30&ndash;45</span>
+          <span class="badge-label">minute<br>conversation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 2: PAIN POINTS ============ -->
+  <section class="section pain-points" id="pain-points">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-center">A Familiar Feeling</p>
+        <h2>Does This Feel Like Your Child?</h2>
+        <p class="section-sub">Every child is different. But many parents who meet us say things like&hellip;</p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-card reveal-stagger">
+          <span class="pain-emoji" aria-hidden="true">😔</span>
+          <p>&ldquo;My child studies&hellip; but forgets everything during exams.&rdquo;</p>
+        </div>
+        <div class="pain-card reveal-stagger">
+          <span class="pain-emoji" aria-hidden="true">📚</span>
+          <p>&ldquo;We&rsquo;ve changed tuition more than once, but nothing really changed.&rdquo;</p>
+        </div>
+        <div class="pain-card reveal-stagger">
+          <span class="pain-emoji" aria-hidden="true">🧠</span>
+          <p>&ldquo;I know my child is intelligent&hellip; but the marks don&rsquo;t show it.&rdquo;</p>
+        </div>
+        <div class="pain-card reveal-stagger">
+          <span class="pain-emoji" aria-hidden="true">📱</span>
+          <p>&ldquo;Getting my child to focus on studies feels like a daily battle.&rdquo;</p>
+        </div>
+        <div class="pain-card reveal-stagger">
+          <span class="pain-emoji" aria-hidden="true">💔</span>
+          <p>&ldquo;After every exam, my child&rsquo;s confidence goes down a little more.&rdquo;</p>
+        </div>
+        <div class="pain-card reveal-stagger">
+          <span class="pain-emoji" aria-hidden="true">🤷</span>
+          <p>&ldquo;Sometimes I feel I&rsquo;m missing something&hellip; but I don&rsquo;t know what.&rdquo;</p>
+        </div>
+      </div>
+
+      <div class="highlight-box reveal">
+        <p>If these thoughts feel familiar, you&rsquo;re not the only parent asking these questions.</p>
+      </div>
+
+      <div class="pain-copy reveal">
+        <p>If you found yourself saying &ldquo;Yes&rdquo;&hellip; even to just 2 or 3 of these&hellip; you&rsquo;re not alone.</p>
+        <p>Every week, we meet parents who are hardworking, caring, and doing their best&hellip; yet they still feel confused about what their child really needs.</p>
+        <p>The problem isn&rsquo;t that parents don&rsquo;t care. Sometimes, they simply don&rsquo;t have the right lens to understand how their child learns. And that&rsquo;s exactly where the journey begins.</p>
+        <p class="pain-question">🎯 What if the answer isn&rsquo;t &ldquo;more effort&rdquo;&hellip;<br>What if it&rsquo;s a better understanding?</p>
+      </div>
+
+      <div class="section-cta reveal">
+        <!-- TODO: replace href with real booking URL -->
+        <a href="#discovery" class="btn btn-primary btn-large">Help Me Understand My Child Better</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: OLD VS NEW APPROACH ============ -->
+  <section class="section approach" id="approach">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>What If Your Child Doesn&rsquo;t Need More Pressure&hellip;<br>They Need To Be Understood Differently.</h2>
+      </div>
+
+      <div class="approach-intro reveal">
+        <p>For years, most parents have been told that better results come from more tuition, more study hours, more discipline, more practice. And while these can help, they don&rsquo;t answer one important question:</p>
+        <p class="approach-question">&ldquo;How does your child learn best?&rdquo;</p>
+        <p>Because no two children learn in exactly the same way. Some understand by seeing. Some by doing. Some by asking questions. Some need time before they feel confident.</p>
+        <p>When every child is expected to learn the same way&hellip; many capable children begin believing they&rsquo;re &ldquo;not good at studies.&rdquo;</p>
+      </div>
+
+      <div class="split-layout reveal">
+        <div class="split-card split-card-old">
+          <p class="split-label">What Most Parents Try</p>
+          <ul class="split-list split-list-old">
+            <li><span class="split-icon" aria-hidden="true">✕</span> More Tuition</li>
+            <li><span class="split-icon" aria-hidden="true">✕</span> More Pressure</li>
+            <li><span class="split-icon" aria-hidden="true">✕</span> More Comparison</li>
+            <li><span class="split-icon" aria-hidden="true">✕</span> More Arguments</li>
+          </ul>
+        </div>
+        <div class="split-divider" aria-hidden="true">
+          <span>vs</span>
+        </div>
+        <div class="split-card split-card-new">
+          <p class="split-label">A Different Approach</p>
+          <ul class="split-list split-list-new">
+            <li><span class="split-icon" aria-hidden="true">✓</span> Understand First</li>
+            <li><span class="split-icon" aria-hidden="true">✓</span> Observe Learning Patterns</li>
+            <li><span class="split-icon" aria-hidden="true">✓</span> Build Confidence</li>
+            <li><span class="split-icon" aria-hidden="true">✓</span> Guide with Clarity</li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote class="pull-quote reveal">
+        &ldquo;Understanding isn&rsquo;t the opposite of discipline. It&rsquo;s the foundation of effective guidance.&rdquo;
+      </blockquote>
+
+      <div class="approach-copy reveal">
+        <p class="approach-lead">The biggest change doesn&rsquo;t happen when you push harder.<br>It happens when you understand better.</p>
+        <p>That&rsquo;s the philosophy behind KS CODE&trade;. Not to label your child. Not to compare them. But to help you understand how they naturally learn, think, remember, and grow.</p>
+        <p class="approach-lead">Imagine making study decisions based on understanding&hellip; instead of guesswork.</p>
+      </div>
+
+      <div class="section-cta reveal">
+        <!-- TODO: replace href with real booking URL -->
+        <a href="#discovery" class="btn btn-primary btn-large">Discover My Child&rsquo;s KS CODE&trade;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4: WHAT IS KS CODE ============ -->
+  <section class="section ks-code" id="ks-code">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-center">The Framework</p>
+        <h2>So&hellip; What Exactly Is KS CODE&trade;?</h2>
+        <p class="ks-negation">It&rsquo;s not a test.<br>It&rsquo;s not a label.<br><strong>It&rsquo;s a better way to understand your child.</strong></p>
+      </div>
+
+      <div class="ks-copy reveal">
+        <p>Every child has a unique way of learning, thinking, remembering, and responding to challenges. KS CODE&trade; is a child insight framework designed to help parents understand those natural patterns&mdash;so they can make better decisions for their child&rsquo;s learning and growth.</p>
+        <p class="ks-shift">Instead of asking &ldquo;What&rsquo;s wrong with my child?&rdquo;<br>KS CODE&trade; helps you ask &ldquo;What works best for my child?&rdquo;</p>
+        <p>And sometimes&hellip; that one shift changes everything.</p>
+      </div>
+
+      <h3 class="ks-subhead reveal">During Your FREE KS CODE&trade; Discovery Conversation, You&rsquo;ll Begin To Understand:</h3>
+
+      <div class="ks-detail-grid reveal">
+        <div class="ks-detail reveal-stagger">
+          <span class="ks-detail-emoji" aria-hidden="true">🧠</span>
+          <h4>How your child naturally learns</h4>
+          <p>Not every child learns the same way. Understanding their natural style helps you support them more effectively.</p>
+        </div>
+        <div class="ks-detail reveal-stagger">
+          <span class="ks-detail-emoji" aria-hidden="true">🎯</span>
+          <h4>What may be affecting their learning</h4>
+          <p>Focus, confidence, recall, motivation, or learning habits&mdash;every child has different patterns.</p>
+        </div>
+        <div class="ks-detail reveal-stagger">
+          <span class="ks-detail-emoji" aria-hidden="true">💡</span>
+          <h4>What you can do differently</h4>
+          <p>Simple, practical guidance you can start applying at home. No complicated techniques. No unrealistic promises. Just meaningful next steps.</p>
+        </div>
+      </div>
+
+      <p class="ks-transition reveal">Because when you understand your child better&hellip; you stop guessing. You stop comparing. And you start guiding with greater confidence.</p>
+
+      <div class="framework-cards reveal">
+        <div class="framework-card reveal-stagger">
+          <span class="framework-icon" aria-hidden="true">🧠</span>
+          <h3>Understand</h3>
+          <p>Learn how your child naturally learns and remembers.</p>
+        </div>
+        <div class="framework-card reveal-stagger">
+          <span class="framework-icon" aria-hidden="true">🎯</span>
+          <h3>Discover</h3>
+          <p>Identify patterns that may be affecting focus, confidence, and learning.</p>
+        </div>
+        <div class="framework-card reveal-stagger">
+          <span class="framework-icon" aria-hidden="true">💡</span>
+          <h3>Guide</h3>
+          <p>Take home practical ideas you can start using immediately.</p>
+        </div>
+      </div>
+
+      <div class="journey-diagram reveal" role="img" aria-label="Journey: Understand leads to Better Decisions, which leads to Better Support, which leads to Better Learning Experience">
+        <div class="journey-step"><span>Understand</span></div>
+        <div class="journey-arrow" aria-hidden="true">↓</div>
+        <div class="journey-step"><span>Better Decisions</span></div>
+        <div class="journey-arrow" aria-hidden="true">↓</div>
+        <div class="journey-step"><span>Better Support</span></div>
+        <div class="journey-arrow" aria-hidden="true">↓</div>
+        <div class="journey-step journey-step-final"><span>Better Learning Experience</span></div>
+      </div>
+
+      <p class="ks-closing reveal">KS CODE&trade; helps parents understand how their child naturally learns, thinks, remembers, and grows&mdash;so they can support them with greater confidence.</p>
+
+      <div class="offer-box offer-box-center reveal">
+        <p class="offer-tag">🎁 FREE KS CODE&trade; Discovery Conversation</p>
+        <p class="offer-meta">Personalized &nbsp;&bull;&nbsp; 30&ndash;45 Minutes &nbsp;&bull;&nbsp; No Pressure</p>
+      </div>
+
+      <div class="section-cta section-cta-dual reveal">
+        <!-- TODO: replace href with real booking URL -->
+        <a href="#discovery" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+        <p class="cta-or">Not Ready Yet? Download our FREE Parent Guide:</p>
+        <p class="cta-guide-title">Har Bacche Ka Code Hota Hai</p>
+        <p class="cta-guide-sub">Discover the 7 hidden reasons why many intelligent children struggle in school&mdash;and how understanding comes before improvement.</p>
+                <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5: DISCOVERY CONVERSATION ============ -->
+  <section class="section discovery" id="discovery">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-center">The Experience</p>
+        <h2>What Happens During Your FREE KS CODE&trade; Discovery Conversation?</h2>
+        <p class="section-sub">A relaxed 30&ndash;45 minute conversation focused entirely on understanding your child.</p>
+      </div>
+
+      <div class="not-list reveal">
+        <p><strong>This is not an exam.</strong> This is not counselling. This is not a sales presentation.</p>
+        <p>It&rsquo;s simply a one-to-one conversation designed to help you see your child from a new perspective.</p>
+      </div>
+
+      <h3 class="ks-subhead reveal">Here&rsquo;s What You&rsquo;ll Experience</h3>
+
+      <ol class="process-steps reveal">
+        <li class="process-step reveal-stagger">
+          <span class="process-number">01</span>
+          <span class="process-icon" aria-hidden="true">👂</span>
+          <h4>We Listen</h4>
+          <p>Every child has a different story. We begin by understanding your child&rsquo;s learning habits, strengths, challenges, and your concerns as a parent. Because good guidance starts with listening.</p>
+        </li>
+        <li class="process-step reveal-stagger">
+          <span class="process-number">02</span>
+          <span class="process-icon" aria-hidden="true">🧩</span>
+          <h4>We Discover Patterns</h4>
+          <p>Together, we&rsquo;ll explore what may be influencing your child&rsquo;s learning experience. You may discover patterns that have always been there&mdash;but were easy to miss.</p>
+        </li>
+        <li class="process-step reveal-stagger">
+          <span class="process-number">03</span>
+          <span class="process-icon" aria-hidden="true">💡</span>
+          <h4>You Leave With Clarity</h4>
+          <p>By the end of the conversation, you&rsquo;ll walk away with better understanding of your child&rsquo;s learning pattern, practical guidance you can use at home, and greater confidence about your next steps.</p>
+        </li>
+      </ol>
+
+      <div class="clarity-checklist reveal">
+        <p class="clarity-lead">Whether or not you continue with us&hellip;</p>
+        <ul class="check-list check-list-center">
+          <li><span class="check-icon" aria-hidden="true">✔</span> Better understanding of your child&rsquo;s learning pattern</li>
+          <li><span class="check-icon" aria-hidden="true">✔</span> Practical guidance you can use at home</li>
+          <li><span class="check-icon" aria-hidden="true">✔</span> Greater confidence about your next steps</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box highlight-box-alt reveal">
+        <p><strong>Our Goal Isn&rsquo;t To Convince You.</strong><br>Our Goal Is To Help You Understand Your Child Better.</p>
+        <p class="highlight-sub">If the conversation gives you a new perspective&hellip; we&rsquo;ve already added value.</p>
+      </div>
+
+      <div class="offer-box offer-box-center reveal">
+        <p class="offer-tag">🎁 FREE &nbsp;&bull;&nbsp; 30&ndash;45 Minutes &nbsp;&bull;&nbsp; Personalized</p>
+      </div>
+
+      <div class="section-cta section-cta-dual reveal">
+        <!-- TODO: replace href with real booking URL -->
+        <a href="#discovery-form" class="btn btn-primary btn-large">Yes, I&rsquo;d Like My FREE Discovery Conversation</a>
+        <p class="cta-or">Still Exploring? Download our FREE Parent Guide and begin understanding your child today.</p>
+                <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6: TESTIMONIALS ============ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-center">Real Families</p>
+        <h2>What Changed For These Families&hellip;</h2>
+        <p class="section-sub">It wasn&rsquo;t just better study habits. It was a better understanding of their child.</p>
+      </div>
+
+      <div class="testimonial-grid reveal">
+        <figure class="testimonial-card reveal-stagger">
+          <span class="testimonial-emoji" aria-hidden="true">❤️</span>
+          <blockquote>
+            <p class="testimonial-title">&ldquo;I stopped forcing. I started understanding.&rdquo;</p>
+            <p>&ldquo;I always thought my son was careless. During the KS CODE&trade; Discovery Conversation, I realised he learned differently. The biggest change wasn&rsquo;t in him&hellip; it was in the way I started supporting him.&rdquo;</p>
+          </blockquote>
+          <figcaption>&mdash; Parent of a Class 7 Student</figcaption>
+        </figure>
+
+        <figure class="testimonial-card reveal-stagger">
+          <span class="testimonial-emoji" aria-hidden="true">🌟</span>
+          <blockquote>
+            <p class="testimonial-title">&ldquo;Our home became calmer.&rdquo;</p>
+            <p>&ldquo;Every evening used to end in arguments about homework. Today, we still remind our daughter to study&mdash;but the conversations are no longer stressful. We understand her much better now.&rdquo;</p>
+          </blockquote>
+          <figcaption>&mdash; Parent of a Class 9 Student</figcaption>
+        </figure>
+
+        <figure class="testimonial-card reveal-stagger">
+          <span class="testimonial-emoji" aria-hidden="true">📚</span>
+          <blockquote>
+            <p class="testimonial-title">&ldquo;Marks improved&hellip; but that wasn&rsquo;t the biggest win.&rdquo;</p>
+            <p>&ldquo;The biggest difference was seeing our child become more confident. For the first time, we felt we were guiding instead of constantly pushing.&rdquo;</p>
+          </blockquote>
+          <figcaption>&mdash; Parent of a Class 8 Student</figcaption>
+        </figure>
+      </div>
+
+      <div class="testimonial-note reveal">
+        <p><strong>Every Child&rsquo;s Journey Is Different.</strong></p>
+        <p>We don&rsquo;t believe every child will have the same outcome. But we do believe every parent deserves the opportunity to understand their child better. And that understanding often becomes the first step towards meaningful change.</p>
+      </div>
+
+      <div class="trust-strip reveal">
+        <p class="trust-stars" aria-hidden="true">★★★★★</p>
+        <div class="trust-strip-stats">
+          <div><span>15+</span>Years</div>
+          <div><span>3,00,000+</span>Families Reached</div>
+          <div><span>650+</span>Workshops</div>
+        </div>
+      </div>
+
+      <div class="section-cta section-cta-dual reveal">
+        <!-- TODO: replace href with real booking URL -->
+        <a href="#discovery" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+        <p class="cta-or">Or Start With Our FREE Parent Guide</p>
+                <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7: DR. KULDEEP SINGH SOLANKI ============ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Why Thousands of Parents Have Trusted KS CODE&trade;</h2>
+        <p class="section-sub">Because before we guide a child&hellip; we first try to understand them.</p>
+      </div>
+
+      <div class="about-intro reveal">
+        <p>For over 15 years, we&rsquo;ve worked with students, parents, teachers, and schools across India. One thing became clear: many children are not struggling because they lack ability. They&rsquo;re struggling because their learning patterns are not being understood. That simple observation became the foundation of KS CODE&trade;.</p>
+      </div>
+
+      <div class="about-grid reveal">
+        <div class="about-media">
+          <div class="about-photo-frame">
+            <!-- Replace with assets/dr-kuldeep-singh-solanki.webp -->
+            <img class="placeholder-img" src="assets/dr-kuldeep-singh-solanki.jpeg" alt="" data-placeholder="Professional photo of Dr. Kuldeep Singh Solanki">
+          </div>
+          <div class="about-badge">
+            <span class="badge-number">15+</span>
+            <span class="badge-label">Years</span>
+          </div>
+          <p class="about-signature" aria-hidden="true">Kuldeep Singh Solanki</p>
+        </div>
+
+        <div class="about-content">
+          <p class="eyebrow">Meet</p>
+          <h3>Dr. Kuldeep Singh Solanki</h3>
+          <p class="about-role">Child Brain &amp; Learning Performance Expert<br>Founder, Sharp Planet</p>
+
+          <p>For more than 15 years, Dr. Kuldeep has dedicated his work to helping parents understand how children learn, remember, and build confidence. Through workshops, seminars, and parent interactions, he has reached:</p>
+
+          <div class="about-stats">
+            <p>⭐ 3,00,000+ Students, Parents &amp; Educators</p>
+            <p>🎤 650+ Workshops &amp; Seminars</p>
+          </div>
+
+          <p class="about-mission">His mission is simple: help parents understand their child before trying to change them.</p>
+
+          <blockquote class="pull-quote pull-quote-left">
+            &ldquo;Every child already has a unique potential. Sometimes, all they need is someone who understands how they learn.&rdquo;
+            <cite>&mdash; Dr. Kuldeep Singh Solanki</cite>
+          </blockquote>
+
+          <div class="about-cta">
+            <!-- TODO: replace href with real booking URL -->
+            <a href="#discovery" class="btn btn-primary">Begin with a FREE KS CODE&trade; Discovery Conversation</a>
+            <p class="cta-or cta-or-left">Prefer to Learn First?</p>
+                        <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 8: FAQ ============ -->
+  <section class="section faq-section" id="faq">
+    <div class="container container-narrow">
+      <div class="section-head reveal">
+        <p class="eyebrow eyebrow-center">Before You Book</p>
+        <h2>Questions Every Parent Asks Before Booking</h2>
+        <p class="section-sub">You may be wondering the same things&hellip;</p>
+      </div>
+
+      <div class="faq-accordion reveal" id="faqAccordion">
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">
+              <span>Is the Discovery Conversation really FREE?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-1" role="region" aria-labelledby="faq-1-btn">
+            <p>Yes. There is no fee and no obligation. Our goal is simple&mdash;to help you understand your child better before you decide what to do next.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">
+              <span>Will my child need to attend?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-2" role="region" aria-labelledby="faq-2-btn">
+            <p>Not always. The first conversation is usually with the parent, because understanding begins with your observations and experiences. If needed, we&rsquo;ll guide you on the best next step.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">
+              <span>Is this another counselling session?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-3" role="region" aria-labelledby="faq-3-btn">
+            <p>No. This is a structured conversation focused on understanding your child&rsquo;s learning patterns and helping you gain practical clarity.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">
+              <span>What if my child doesn&rsquo;t have any major study problems?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-4" role="region" aria-labelledby="faq-4-btn">
+            <p>That&rsquo;s perfectly okay. Many parents book the Discovery Conversation because they want to understand and support their child better&mdash;not because something is &ldquo;wrong.&rdquo;</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">
+              <span>Will I be pressured to join a program?</span>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-5" role="region" aria-labelledby="faq-5-btn">
+            <p>No. You&rsquo;ll receive valuable insights during the conversation. After that, the decision is completely yours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-footer reveal">
+        <p>Still Have Questions? We&rsquo;re happy to answer them. Because informed parents make better decisions.</p>
+        <div class="section-cta section-cta-dual">
+          <!-- TODO: replace href with real booking URL -->
+          <a href="#discovery" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+          <p class="cta-or">&ldquo;I&rsquo;m ready to understand my child.&rdquo;<br>Download our FREE Parent Guide and begin your journey today.</p>
+                    <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section final-cta" id="final-cta">
+    <div class="hero-code-thread hero-code-thread-alt" aria-hidden="true">
+      <svg viewBox="0 0 1200 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="thread-path" d="M-50 120 C 200 220, 320 40, 520 140 S 820 260, 980 120 S 1250 60, 1300 160" />
+        <circle class="thread-dot" cx="520" cy="140" r="5"/>
+        <circle class="thread-dot" cx="980" cy="120" r="5"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="final-cta-title">The Next Step Isn&rsquo;t About Better Marks.<br>It&rsquo;s About Understanding Your Child Better.</h2>
+        <p class="section-sub final-cta-sub">Every child deserves to be understood before they&rsquo;re expected to perform. And every parent deserves the confidence of knowing they&rsquo;re supporting their child in the right way.</p>
+        <p class="section-sub final-cta-sub">That journey doesn&rsquo;t begin with another tuition. It begins with understanding.</p>
+      </div>
+
+      <h3 class="ks-subhead reveal">Choose the Next Step That&rsquo;s Right for You</h3>
+
+      <div class="choice-grid reveal">
+        <div class="choice-card choice-card-primary reveal-stagger">
+          <p class="choice-tag">🟢 I&rsquo;m Ready</p>
+          <h4>Book Your FREE KS CODE&trade; Discovery Conversation</h4>
+          <ul class="check-list">
+            <li><span class="check-icon" aria-hidden="true">✔</span> Personalized 30&ndash;45 minute conversation</li>
+            <li><span class="check-icon" aria-hidden="true">✔</span> Understand your child&rsquo;s natural learning pattern</li>
+            <li><span class="check-icon" aria-hidden="true">✔</span> Practical guidance you can use at home</li>
+            <li><span class="check-icon" aria-hidden="true">✔</span> No pressure. No obligation.</li>
+          </ul>
+          <!-- TODO: replace href with real booking URL -->
+          <a href="#discovery-form" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+        </div>
+
+        <div class="choice-card choice-card-secondary reveal-stagger" id="parent-guide">
+          <p class="choice-tag">📖 I&rsquo;d Like To Learn More First</p>
+          <h4>Download our FREE Parent Guide</h4>
+          <p class="choice-guide-title">Har Bacche Ka Code Hota Hai</p>
+          <p>Discover the 7 hidden reasons why many intelligent children struggle in school&mdash;and how understanding their learning pattern can change the way you support them.</p>
+          <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-outline btn-large">Download FREE Parent Guide</a>
+        </div>
+      </div>
+
+      <div class="promise reveal">
+        <p class="promise-label">A Personal Promise</p>
+        <p>Whether you book a Discovery Conversation today&hellip; or simply begin by reading the Parent Guide&hellip; we hope you leave with one new belief:</p>
+        <p class="promise-lead">Your child doesn&rsquo;t need to become someone else.<br>They deserve to be understood for who they already are.</p>
+        <p>Because when understanding comes first&hellip; learning often follows.</p>
+      </div>
+
+      <div class="thank-you reveal">
+        <p class="thank-you-title">Thank You</p>
+        <p>Thank you for taking the time to think differently about your child&rsquo;s learning journey. We hope this page has given you something more valuable than information&hellip; a new perspective.</p>
+        <p>We&rsquo;d be honoured to be a small part of your child&rsquo;s journey.</p>
+        <p class="thank-you-sign">&mdash; Dr. Kuldeep Singh Solanki<br><span>Founder, Sharp Planet</span></p>
+      </div>
+
+      <div class="trust-strip trust-strip-final reveal">
+        <div class="trust-strip-stats">
+          <div><span>3,00,000+</span>Students, Parents &amp; Educators</div>
+          <div><span>15+</span>Years of Experience</div>
+          <div><span>650+</span>Workshops &amp; Seminars</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-title">Sharp Planet</span>
+      <span class="brand-sub">KS CODE&trade;</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#ks-code">What is KS CODE™</a>
+      <a href="#discovery">The Conversation</a>
+      <a href="#testimonials">Families</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> Sharp Planet. All rights reserved. KS CODE&trade; is a trademark of Sharp Planet.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Footer year ---------- */
+  var yearEl = document.getElementById("year");
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+  /* ---------- Mobile nav toggle ---------- */
+  var navToggle = document.getElementById("navToggle");
+  var mobileNav = document.getElementById("mobileNav");
+
+  if (navToggle && mobileNav) {
+    navToggle.addEventListener("click", function () {
+      var isOpen = navToggle.getAttribute("aria-expanded") === "true";
+      navToggle.setAttribute("aria-expanded", String(!isOpen));
+      mobileNav.classList.toggle("open", !isOpen);
+      navToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+    });
+
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open menu");
+        mobileNav.classList.remove("open");
+      });
+    });
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  var faqButtons = document.querySelectorAll(".faq-question");
+
+  faqButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq-item");
+      var expanded = btn.getAttribute("aria-expanded") === "true";
+
+      // Close all other items (single-open accordion)
+      faqButtons.forEach(function (otherBtn) {
+        if (otherBtn !== btn) {
+          otherBtn.setAttribute("aria-expanded", "false");
+          var otherItem = otherBtn.closest(".faq-item");
+          if (otherItem) { otherItem.classList.remove("open"); }
+        }
+      });
+
+      btn.setAttribute("aria-expanded", String(!expanded));
+      if (item) { item.classList.toggle("open", !expanded); }
+    });
+
+    // Keyboard accessibility is native to <button>; ensure focus style visible.
+  });
+
+  /* ---------- Scroll reveal animations ---------- */
+  var revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  } else {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealEls.forEach(function (el) { observer.observe(el); });
+  }
+
+  /* ---------- Sticky header shadow on scroll ---------- */
+  var header = document.getElementById("site-header");
+  if (header) {
+    var lastScroll = 0;
+    window.addEventListener(
+      "scroll",
+      function () {
+        var y = window.scrollY || window.pageYOffset;
+        if (y > 8 && lastScroll <= 8) {
+          header.style.boxShadow = "0 6px 20px rgba(18, 36, 31, 0.08)";
+        } else if (y <= 8) {
+          header.style.boxShadow = "none";
+        }
+        lastScroll = y;
+      },
+      { passive: true }
+    );
+  }
+})();
+
+</script>
+</body>
+</html>
