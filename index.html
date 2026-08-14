@@ -72,7 +72,7 @@
 
 /* ---------- Reset ---------- */
 *, *::before, *::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior: smooth; font-size: 17.5px; }
 body{
   margin: 0;
   font-family: var(--font-body);
@@ -186,9 +186,22 @@ p{ line-height: 1.65; color: var(--color-text); }
 }
 .btn-primary:hover{
   background: var(--color-accent-dark);
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.035);
   box-shadow: var(--shadow-lg);
 }
+.btn:active{
+  transform: translateY(0) scale(0.96);
+  transition-duration: 0.12s;
+}
+.btn-ghost:hover, .btn-outline:hover{
+  transform: translateY(-2px) scale(1.02);
+}
+@keyframes btnPulse{
+  0%, 100%{ box-shadow: 0 0 0 0 rgba(190, 138, 62, 0.38), var(--shadow-md); }
+  50%{ box-shadow: 0 0 0 12px rgba(190, 138, 62, 0), var(--shadow-md); }
+}
+.btn-pulse{ animation: btnPulse 2.4s ease-in-out infinite; }
+.btn-pulse:hover{ animation-play-state: paused; }
 .btn-large{ padding: 18px 36px; font-size: 1.05rem; }
 .btn-small{ padding: 11px 20px; font-size: 0.9rem; }
 .btn-ghost{
@@ -940,6 +953,7 @@ p{ line-height: 1.65; color: var(--color-text); }
   html{ scroll-behavior: auto; }
   .reveal, .reveal-stagger{ opacity: 1; transform: none; transition: none; }
   .btn, .pain-card, .framework-card, .process-step, .testimonial-card{ transition: none; }
+  .btn-pulse{ animation: none; }
 }
 
 /* =========================================================
@@ -1095,10 +1109,24 @@ body.modal-open{ overflow: hidden; }
   background: var(--color-surface-warm);
   transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
 }
-.form-field input:focus{
+.form-field input:focus,
+.form-field textarea:focus{
   outline: none;
   border-color: var(--color-accent);
   background: var(--color-surface);
+}
+.form-field textarea{
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  color: var(--color-text);
+  background: var(--color-surface-warm);
+  resize: vertical;
+  min-height: 90px;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
 }
 .modal-form .f-row{ margin-top: 6px; }
 .modal-submit{ width: 100%; }
@@ -1141,8 +1169,7 @@ body.modal-open{ overflow: hidden; }
     </nav>
 
     <div class="header-cta">
-      <!-- TODO: replace #discovery with the real booking URL -->
-      <a href="#discovery" class="btn btn-primary btn-small">Book Free Conversation</a>
+      <a href="#booking-modal" class="btn btn-primary btn-small js-book-call">Book Free Conversation</a>
     </div>
 
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
@@ -1155,7 +1182,7 @@ body.modal-open{ overflow: hidden; }
     <a href="#discovery">The Conversation</a>
     <a href="#testimonials">Families</a>
     <a href="#faq">FAQ</a>
-    <a href="#discovery" class="btn btn-primary">Book Free Conversation</a>
+    <a href="#booking-modal" class="btn btn-primary js-book-call">Book Free Conversation</a>
   </div>
 </header>
 
@@ -1194,8 +1221,7 @@ body.modal-open{ overflow: hidden; }
         </div>
 
         <div class="hero-actions">
-          <!-- TODO: replace href with real booking URL -->
-          <a href="#discovery" class="btn btn-primary btn-large">Discover My Child&rsquo;s KS CODE&trade;</a>
+          <a href="#booking-modal" class="btn btn-primary btn-large btn-pulse js-book-call">Discover My Child&rsquo;s KS CODE&trade;</a>
         </div>
 
         <div class="hero-secondary">
@@ -1213,7 +1239,6 @@ body.modal-open{ overflow: hidden; }
 
       <div class="hero-visual reveal" aria-hidden="true">
         <div class="hero-portrait-frame">
-          <!-- Replace with assets/hero-family.webp -->
           <img class="placeholder-img" src="assets/hero-family.png" alt="" data-placeholder="A parent and child in a warm, natural conversation">
         </div>
         <div class="hero-visual-badge">
@@ -1272,8 +1297,7 @@ body.modal-open{ overflow: hidden; }
       </div>
 
       <div class="section-cta reveal">
-        <!-- TODO: replace href with real booking URL -->
-        <a href="#discovery" class="btn btn-primary btn-large">Help Me Understand My Child Better</a>
+        <a href="#booking-modal" class="btn btn-primary btn-large js-book-call">Help Me Understand My Child Better</a>
       </div>
     </div>
   </section>
@@ -1327,8 +1351,7 @@ body.modal-open{ overflow: hidden; }
       </div>
 
       <div class="section-cta reveal">
-        <!-- TODO: replace href with real booking URL -->
-        <a href="#discovery" class="btn btn-primary btn-large">Discover My Child&rsquo;s KS CODE&trade;</a>
+        <a href="#booking-modal" class="btn btn-primary btn-large js-book-call">Discover My Child&rsquo;s KS CODE&trade;</a>
       </div>
     </div>
   </section>
@@ -1406,8 +1429,7 @@ body.modal-open{ overflow: hidden; }
       </div>
 
       <div class="section-cta section-cta-dual reveal">
-        <!-- TODO: replace href with real booking URL -->
-        <a href="#discovery" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+        <a href="#booking-modal" class="btn btn-primary btn-large js-book-call">Yes, I&rsquo;d Like To Understand My Child Better</a>
         <p class="cta-or">Not Ready Yet? Download our FREE Parent Guide:</p>
         <p class="cta-guide-title">Har Bacche Ka Code Hota Hai</p>
         <p class="cta-guide-sub">Discover the 7 hidden reasons why many intelligent children struggle in school&mdash;and how understanding comes before improvement.</p>
@@ -1472,7 +1494,6 @@ body.modal-open{ overflow: hidden; }
       </div>
 
       <div class="section-cta section-cta-dual reveal">
-        <!-- TODO: replace href with real booking URL -->
         <a href="#discovery-form" class="btn btn-primary btn-large">Yes, I&rsquo;d Like My FREE Discovery Conversation</a>
         <p class="cta-or">Still Exploring? Download our FREE Parent Guide and begin understanding your child today.</p>
                 <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
@@ -1533,8 +1554,7 @@ body.modal-open{ overflow: hidden; }
       </div>
 
       <div class="section-cta section-cta-dual reveal">
-        <!-- TODO: replace href with real booking URL -->
-        <a href="#discovery" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+        <a href="#booking-modal" class="btn btn-primary btn-large js-book-call">Yes, I&rsquo;d Like To Understand My Child Better</a>
         <p class="cta-or">Or Start With Our FREE Parent Guide</p>
                 <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
       </div>
@@ -1556,7 +1576,6 @@ body.modal-open{ overflow: hidden; }
       <div class="about-grid reveal">
         <div class="about-media">
           <div class="about-photo-frame">
-            <!-- Replace with assets/dr-kuldeep-singh-solanki.webp -->
             <img class="placeholder-img" src="assets/dr-kuldeep-singh-solanki.jpeg" alt="" data-placeholder="Professional photo of Dr. Kuldeep Singh Solanki">
           </div>
           <div class="about-badge">
@@ -1586,8 +1605,7 @@ body.modal-open{ overflow: hidden; }
           </blockquote>
 
           <div class="about-cta">
-            <!-- TODO: replace href with real booking URL -->
-            <a href="#discovery" class="btn btn-primary">Begin with a FREE KS CODE&trade; Discovery Conversation</a>
+            <a href="#booking-modal" class="btn btn-primary js-book-call">Begin with a FREE KS CODE&trade; Discovery Conversation</a>
             <p class="cta-or cta-or-left">Prefer to Learn First?</p>
                         <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
           </div>
@@ -1670,8 +1688,7 @@ body.modal-open{ overflow: hidden; }
       <div class="faq-footer reveal">
         <p>Still Have Questions? We&rsquo;re happy to answer them. Because informed parents make better decisions.</p>
         <div class="section-cta section-cta-dual">
-          <!-- TODO: replace href with real booking URL -->
-          <a href="#discovery" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+          <a href="#booking-modal" class="btn btn-primary btn-large js-book-call">Yes, I&rsquo;d Like To Understand My Child Better</a>
           <p class="cta-or">&ldquo;I&rsquo;m ready to understand my child.&rdquo;<br>Download our FREE Parent Guide and begin your journey today.</p>
                     <a href="https://kpsolanki310816.systeme.io/ebf6b6a9" class="btn btn-ghost">📖 Download FREE Parent Guide</a>
         </div>
@@ -1707,8 +1724,7 @@ body.modal-open{ overflow: hidden; }
             <li><span class="check-icon" aria-hidden="true">✔</span> Practical guidance you can use at home</li>
             <li><span class="check-icon" aria-hidden="true">✔</span> No pressure. No obligation.</li>
           </ul>
-          <!-- TODO: replace href with real booking URL -->
-          <a href="#discovery-form" class="btn btn-primary btn-large">Yes, I&rsquo;d Like To Understand My Child Better</a>
+          <a href="#booking-modal" class="btn btn-primary btn-large js-book-call">Yes, I&rsquo;d Like To Understand My Child Better</a>
         </div>
 
         <div class="choice-card choice-card-secondary reveal-stagger" id="parent-guide">
@@ -1764,15 +1780,161 @@ body.modal-open{ overflow: hidden; }
   </div>
 </footer>
 
+
+<!-- ============ BOOK A CONVERSATION MODAL (opens WhatsApp with prefilled details) ============ -->
+<div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" aria-hidden="true">
+  <div class="modal-panel" tabindex="-1">
+    <button type="button" class="modal-close" data-close-modal aria-label="Close">&times;</button>
+    <p class="eyebrow eyebrow-center">🎁 FREE Discovery Conversation</p>
+    <h3 id="bookingModalTitle" class="modal-title">Let&rsquo;s Understand Your Child Better</h3>
+    <p class="modal-sub">Share a few quick details and we&rsquo;ll open WhatsApp with your message ready to send to Dr. Kuldeep Singh Solanki.</p>
+
+    <form class="modal-form" id="bookingForm">
+      <div class="form-field">
+        <label for="bk-child-name">Child&rsquo;s Name</label>
+        <input type="text" id="bk-child-name" name="child_name" placeholder="Your child's name" autocomplete="name" required>
+      </div>
+      <div class="form-field">
+        <label for="bk-class">Class</label>
+        <input type="text" id="bk-class" name="child_class" placeholder="e.g. Class 8" required>
+      </div>
+      <div class="form-field">
+        <label for="bk-problem">Problem Facing</label>
+        <textarea id="bk-problem" name="problem" rows="3" placeholder="e.g. Forgets during exams, loses focus, low confidence..." required></textarea>
+      </div>
+      <div class="form-field">
+        <label for="bk-whatsapp">Your WhatsApp Number</label>
+        <input type="tel" id="bk-whatsapp" name="whatsapp_number" placeholder="10-digit WhatsApp number" autocomplete="tel" required>
+      </div>
+      <div class="form-field">
+        <label for="bk-desire">What Are You Hoping For? <span style="font-weight:500;">(optional)</span></label>
+        <input type="text" id="bk-desire" name="desire" placeholder="e.g. Understand my child better">
+      </div>
+      <div class="f-row">
+        <button type="submit" class="btn btn-primary btn-large modal-submit">Send on WhatsApp</button>
+      </div>
+    </form>
+    <p class="modal-privacy">We respect your privacy. No spam, ever.</p>
+  </div>
+</div>
+
 <script>
 (function () {
   "use strict";
 
-  /* ---------- Footer year ---------- */
+
+  /* ---------- Book a Conversation modal -> WhatsApp redirect ---------- */
+  // TODO: replace with Dr. Kuldeep's real WhatsApp number.
+  // Format: country code + number, digits only, no "+", no spaces, no dashes.
+  // Example for an Indian number 98765 43210 -> "919876543210"
+  var WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+  var bookingModal = document.getElementById("bookingModal");
+  var bookingPanel = bookingModal ? bookingModal.querySelector(".modal-panel") : null;
+  var bookingTriggers = document.querySelectorAll(".js-book-call");
+  var bookingCloseTriggers = bookingModal ? bookingModal.querySelectorAll("[data-close-modal]") : [];
+  var bookingLastFocused = null;
+
+  function getBookingFocusableEls(container) {
+    return container.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    );
+  }
+
+  function openBookingModal() {
+    if (!bookingModal) { return; }
+    bookingLastFocused = document.activeElement;
+    bookingModal.classList.add("open");
+    bookingModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    var firstField = document.getElementById("bk-child-name");
+    if (firstField) { firstField.focus(); } else if (bookingPanel) { bookingPanel.focus(); }
+    document.addEventListener("keydown", onBookingModalKeydown);
+  }
+
+  function closeBookingModal() {
+    if (!bookingModal) { return; }
+    bookingModal.classList.remove("open");
+    bookingModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    document.removeEventListener("keydown", onBookingModalKeydown);
+    if (bookingLastFocused && typeof bookingLastFocused.focus === "function") {
+      bookingLastFocused.focus();
+    }
+  }
+
+  function onBookingModalKeydown(e) {
+    if (e.key === "Escape" || e.key === "Esc") {
+      closeBookingModal();
+      return;
+    }
+    if (e.key === "Tab" && bookingPanel) {
+      var focusable = getBookingFocusableEls(bookingPanel);
+      if (!focusable.length) { return; }
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  bookingTriggers.forEach(function (trigger) {
+    trigger.addEventListener("click", function (e) {
+      e.preventDefault();
+      openBookingModal();
+    });
+  });
+
+  bookingCloseTriggers.forEach(function (trigger) {
+    trigger.addEventListener("click", closeBookingModal);
+  });
+
+  if (bookingModal) {
+    bookingModal.addEventListener("click", function (e) {
+      if (e.target === bookingModal) { closeBookingModal(); }
+    });
+  }
+
+  var bookingForm = document.getElementById("bookingForm");
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var childName = document.getElementById("bk-child-name").value.trim();
+      var childClass = document.getElementById("bk-class").value.trim();
+      var problem = document.getElementById("bk-problem").value.trim();
+      var whatsappNumber = document.getElementById("bk-whatsapp").value.trim();
+      var desire = document.getElementById("bk-desire").value.trim();
+
+      var lines = [
+        "Hi Dr. Kuldeep, I would like to book a FREE KS CODE\u2122 Discovery Conversation.",
+        "",
+        "Child's Name: " + childName,
+        "Class: " + childClass,
+        "Problem Facing: " + problem,
+        "My WhatsApp Number: " + whatsappNumber
+      ];
+      if (desire) {
+        lines.push("What I'm Hoping For: " + desire);
+      }
+
+      var message = encodeURIComponent(lines.join("\n"));
+      var waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
+
+      window.open(waUrl, "_blank", "noopener");
+      closeBookingModal();
+      bookingForm.reset();
+    });
+  }
+
   var yearEl = document.getElementById("year");
   if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
 
-  /* ---------- Mobile nav toggle ---------- */
   var navToggle = document.getElementById("navToggle");
   var mobileNav = document.getElementById("mobileNav");
 
@@ -1793,7 +1955,6 @@ body.modal-open{ overflow: hidden; }
     });
   }
 
-  /* ---------- FAQ accordion ---------- */
   var faqButtons = document.querySelectorAll(".faq-question");
 
   faqButtons.forEach(function (btn) {
@@ -1801,7 +1962,6 @@ body.modal-open{ overflow: hidden; }
       var item = btn.closest(".faq-item");
       var expanded = btn.getAttribute("aria-expanded") === "true";
 
-      // Close all other items (single-open accordion)
       faqButtons.forEach(function (otherBtn) {
         if (otherBtn !== btn) {
           otherBtn.setAttribute("aria-expanded", "false");
@@ -1813,11 +1973,8 @@ body.modal-open{ overflow: hidden; }
       btn.setAttribute("aria-expanded", String(!expanded));
       if (item) { item.classList.toggle("open", !expanded); }
     });
-
-    // Keyboard accessibility is native to <button>; ensure focus style visible.
   });
 
-  /* ---------- Scroll reveal animations ---------- */
   var revealEls = document.querySelectorAll(".reveal, .reveal-stagger");
   var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -1839,7 +1996,6 @@ body.modal-open{ overflow: hidden; }
     revealEls.forEach(function (el) { observer.observe(el); });
   }
 
-  /* ---------- Sticky header shadow on scroll ---------- */
   var header = document.getElementById("site-header");
   if (header) {
     var lastScroll = 0;
