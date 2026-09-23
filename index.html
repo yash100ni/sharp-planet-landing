@@ -1586,7 +1586,111 @@ body.modal-open{ overflow: hidden; }
       </div>
     </div>
   </section>
+<!-- ============ VIDEO TESTIMONIALS + MEDIA GALLERY (one-paste block) ============ -->
+<style>
+.video-section{ border-top: 1px solid var(--color-border); }
+.video-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 24px; }
+.video-card{ background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.video-card:hover{ transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.video-frame{ position: relative; aspect-ratio: 16 / 9; background: #000; }
+.video-frame iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-thumb{ position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #000; }
+.video-thumb img{ width: 100%; height: 100%; object-fit: cover; opacity: .92; }
+.video-play{ position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; border-radius: 50%; background: var(--color-accent); color: var(--color-primary-dark); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; padding-left: 4px; box-shadow: var(--shadow-md); transition: transform .25s var(--ease); }
+.video-thumb:hover .video-play{ transform: scale(1.1); }
+.video-caption{ padding: 16px 20px; font-weight: 700; font-size: .95rem; color: var(--color-primary); }
+.gallery-section{ background: var(--color-bg-alt); }
+.gallery-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
+.gallery-item{ background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.gallery-item:hover{ transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.gallery-item a{ display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-primary-tint); }
+.gallery-item img{ width: 100%; height: 100%; object-fit: cover; }
+.gallery-item figcaption{ padding: 14px 18px; font-size: .9rem; font-weight: 600; color: var(--color-primary); line-height: 1.4; }
+.gallery-note{ text-align: center; margin-top: 22px; font-size: .85rem; color: var(--color-muted); }
+</style>
 
+<section class="section video-section" id="video-testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-center">Video Stories</p>
+      <h2>Hear It Directly From Parents &amp; Students</h2>
+      <p class="section-sub">Real voices, real experiences.</p>
+    </div>
+    <div class="video-grid reveal">
+      <figure class="video-card">
+        <div class="video-frame">
+          <button type="button" class="video-thumb" data-video="xm88qKNw_qk" data-title="Video testimonial 1" aria-label="Play video testimonial 1">
+            <img src="https://i.ytimg.com/vi/xm88qKNw_qk/hqdefault.jpg" alt="Video testimonial 1" loading="lazy">
+            <span class="video-play" aria-hidden="true">▶</span>
+          </button>
+        </div>
+        <figcaption class="video-caption">Parent Video Testimonial</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame">
+          <button type="button" class="video-thumb" data-video="OPBFOdNPbUM" data-title="Video testimonial 2" aria-label="Play video testimonial 2">
+            <img src="https://i.ytimg.com/vi/OPBFOdNPbUM/hqdefault.jpg" alt="Video testimonial 2" loading="lazy">
+            <span class="video-play" aria-hidden="true">▶</span>
+          </button>
+        </div>
+        <figcaption class="video-caption">Parent Video Testimonial</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame">
+          <button type="button" class="video-thumb" data-video="qCQ8F3QkdFY" data-title="Video testimonial 3" aria-label="Play video testimonial 3">
+            <img src="https://i.ytimg.com/vi/qCQ8F3QkdFY/hqdefault.jpg" alt="Video testimonial 3" loading="lazy">
+            <span class="video-play" aria-hidden="true">▶</span>
+          </button>
+        </div>
+        <figcaption class="video-caption">Parent Video Testimonial</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery-section" id="media">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow eyebrow-center">In The Community</p>
+      <h2>Sharp Planet In The News &amp; On Stage</h2>
+      <p class="section-sub">Workshops, seminars and milestones from our journey with students, parents and educators.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <figure class="gallery-item">
+        <a href="assets/press-radio-workshop.jpeg" target="_blank" rel="noopener"><img src="assets/press-radio-workshop.jpeg" alt="Newspaper coverage of the Memory Miracle workshop with 95 FM Tadka" style="object-position: top;" loading="lazy"></a>
+        <figcaption>Newspaper coverage: &ldquo;Memory Miracle&rdquo; workshop with 95 FM Tadka</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <a href="assets/press-college-seminar.jpeg" target="_blank" rel="noopener"><img src="assets/press-college-seminar.jpeg" alt="Newspaper coverage of a Sharp Planet college seminar" loading="lazy"></a>
+        <figcaption>Newspaper coverage: study &amp; goal-achievement seminar for college students</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <a href="assets/book-make-your-brain-your-buddy.jpeg" target="_blank" rel="noopener"><img src="assets/book-make-your-brain-your-buddy.jpeg" alt="Book Make Your Brain Your Buddy" style="object-position: center 40%;" loading="lazy"></a>
+        <figcaption>Book: &ldquo;Make Your Brain Your Buddy&rdquo;</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <a href="assets/certificate-train-the-trainer.jpeg" target="_blank" rel="noopener"><img src="assets/certificate-train-the-trainer.jpeg" alt="Train the Trainer certificate" loading="lazy"></a>
+        <figcaption>Train the Trainer certification</figcaption>
+      </figure>
+    </div>
+    <p class="gallery-note">Tap any image to view it in full size.</p>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll(".video-thumb").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var f = document.createElement("iframe");
+    f.src = "https://www.youtube-nocookie.com/embed/" + btn.getAttribute("data-video") + "?autoplay=1&rel=0";
+    f.title = btn.getAttribute("data-title") || "Video testimonial";
+    f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+    f.setAttribute("allowfullscreen", "");
+    btn.parentNode.replaceChild(f, btn);
+  });
+});
+</script>
+<!-- ============ END ONE-PASTE BLOCK ============ -->
+   
   <!-- ============ SECTION 7: DR. KULDEEP SINGH SOLANKI ============ -->
   <section class="section about" id="about">
     <div class="container">
